@@ -52,6 +52,11 @@ if !exists("g:vroom_use_binstubs")
   let g:vroom_use_binstubs = 0
 endif
 
+" Support tpope's vim-dispatch
+if !exists("g:vroom_use_dispatch")
+  let g:vroom_use_dispatch = 0
+endif
+
 if !exists("g:vroom_binstubs_path")
   let g:vroom_binstubs_path = './bin'
 endif
@@ -177,6 +182,8 @@ endfunction
 function s:Run(cmd)
   if g:vroom_use_vimux
     call RunVimTmuxCommand(a:cmd)
+  elseif g:vroom_use_dispatch
+    exec ":Dispatch " . a:cmd
   else
     exec ":!" . a:cmd
   end

@@ -117,6 +117,9 @@ g:vroom_binstubs_path                                     *vroom_binstubs_path*
                         automatically and should not be included.
                         Default: './bin'
 
+g:vroom_use_dispatch                                             *vroom_use_vimux*
+                        Run tests using the vim-dispatch plugin
+
 g:vroom_spec_command                                       *vroom_spec_command*
                         This lets you specify the command that runs your
                         specs, e.g. for rspec 1.x, you can use 'spec '.
